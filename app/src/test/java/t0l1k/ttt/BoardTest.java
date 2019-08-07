@@ -26,6 +26,7 @@ public class BoardTest {
     public void testPossibleMoves() {
         Board b = new Board().move(1).move(3).move(4);
         assertArrayEquals(new Integer[]{0, 2, 5, 6, 7, 8}, b.possibleMoves());
+        assertEquals('O', b.getTurn());
     }
 
     @Test
@@ -36,6 +37,29 @@ public class BoardTest {
         assertTrue(new Board("X  X  X  ").win('X'));
         assertTrue(new Board("  X X X  ").win('X'));
         assertTrue(new Board("X   X   X").win('X'));
+    }
+
+
+    @Test
+    public void testGameEnd() {
+        assertFalse(new Board().gameEnd());
+        assertTrue(new Board("XXX      ").gameEnd());
+    }
+
+    @Test
+    public void testMinimax() {
+        assertEquals(100, new Board("XXX      ").minimax());
+        assertEquals(-100, new Board("OOO      ").minimax());
+        assertEquals(0, new Board("XOXOXOOXO").minimax());
+        assertEquals(99, new Board(" XX      ").minimax());
+        assertEquals(-99, new Board(" OO      ", 'O').minimax());
+    }
+
+    @Test
+    public void testBestMove() {
+        assertEquals(0, new Board(" XX      ").bestMove());
+        assertEquals(1, new Board("O O      ", 'O').bestMove());
+
     }
 
 }

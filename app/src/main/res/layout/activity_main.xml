@@ -14,27 +14,24 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button00"
+            android:id="@+id/button0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
 
         <Button
-            android:id="@+id/button01"
+            android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
 
         <Button
-            android:id="@+id/button02"
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
     </LinearLayout>
 
@@ -45,27 +42,24 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button03"
+            android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
 
         <Button
-            android:id="@+id/button04"
+            android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
 
         <Button
-            android:id="@+id/button05"
+            android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
     </LinearLayout>
 
@@ -76,27 +70,24 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button06"
+            android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
 
         <Button
-            android:id="@+id/button07"
+            android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
 
         <Button
-            android:id="@+id/button08"
+            android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="gameLogic"
             android:text=" " />
     </LinearLayout>
 </LinearLayout>

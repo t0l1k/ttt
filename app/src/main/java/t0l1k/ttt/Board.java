@@ -27,6 +27,11 @@ public class Board {
         this.turn = X;
     }
 
+    public Board(String s, char turn) {
+        this.board = s.toCharArray();
+        this.turn = turn;
+    }
+
     @Override
     public String toString() {
         return new String(board);
@@ -73,5 +78,46 @@ public class Board {
             }
         }
         return true;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public boolean gameEnd() {
+        return win(X) || win(O) || possibleMoves().length == 0;
+    }
+
+    public int minimax() {
+        if (win(X)) {
+            return 100;
+        }
+        if (win(O)) {
+            return -100;
+        }
+        if (possibleMoves().length == 0) {
+            return 0;
+        }
+        Integer mm = null;
+        for (Integer idx : possibleMoves()) {
+            Integer value = move(idx).minimax();
+            if (mm == null || turn == X && mm < value || turn == O && value < mm) {
+                mm = value;
+            }
+        }
+        return mm + (turn == X ? -1 : 1);
+    }
+
+    public int bestMove() {
+        Integer mm = null;
+        int best = -1;
+        for (Integer idx : possibleMoves()) {
+            Integer value = move(idx).minimax();
+            if (mm == null || turn == X && mm < value || turn == O && value < mm) {
+                mm = value;
+                best = idx;
+            }
+        }
+        return best;
     }
 }
