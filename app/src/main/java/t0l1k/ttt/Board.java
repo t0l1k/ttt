@@ -11,25 +11,42 @@ public class Board {
     private static final int size = dim * dim;
     private char[] board;
     private char turn;
+    private boolean isBegin;
 
     public Board() {
         this.board = "         ".toCharArray();
         this.turn = X;
+        if (possibleMoves().length < size - 1) {
+            isBegin = true;
+        }
     }
 
     public Board(char[] board, char turn) {
         this.board = board;
         this.turn = turn;
+        if (possibleMoves().length < size - 1) {
+            isBegin = true;
+        }
     }
 
     public Board(String board) {
         this.board = board.toCharArray();
         this.turn = X;
+        if (possibleMoves().length < size - 1) {
+            isBegin = true;
+        }
     }
 
     public Board(String s, char turn) {
         this.board = s.toCharArray();
         this.turn = turn;
+        if (possibleMoves().length < size - 1) {
+            isBegin = true;
+        }
+    }
+
+    public char[] getBoard() {
+        return board;
     }
 
     @Override
@@ -41,7 +58,14 @@ public class Board {
         return turn;
     }
 
+    public boolean isBegin() {
+        return isBegin;
+    }
+
     public Board move(int idx) {
+        if (!isBegin) {
+            isBegin = true;
+        }
         char[] newBoard = board.clone();
         newBoard[idx] = turn;
         return new Board(newBoard, turn == X ? O : X);
